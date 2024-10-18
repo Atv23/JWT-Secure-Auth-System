@@ -52,6 +52,8 @@ public class SecurityConfig {
 		http
 			.authorizeHttpRequests(auth->auth
 				.requestMatchers("/token").permitAll()
+				.requestMatchers("/signup").permitAll()
+				.requestMatchers("/img/**").permitAll()
 				.anyRequest().authenticated()
 				)
 			.sessionManagement(session->session

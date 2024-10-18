@@ -13,21 +13,17 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Ignore log files
+*.log
 
-### VS Code ###
-.vscode/
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore environment variable files
+*.env
+
+# Ignore application properties file for security (you can modify as per your folder structure)
+src/main/resources/application.properties
+src/main/resources/application.yml
