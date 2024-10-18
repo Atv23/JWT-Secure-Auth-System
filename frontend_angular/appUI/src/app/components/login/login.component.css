@@ -1,0 +1,10 @@
+.full-width{
+    width: 100%;
+}
+
+.mat-snack-bar-container {
+    background-color: #e91e63; /* Magenta background */
+    color: white; /* White text for contrast */
+    font-weight: bold; /* Make the text bold */
+  }
+  

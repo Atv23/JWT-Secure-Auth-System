@@ -1,0 +1,21 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center mt" >
+        
+        <!-- Landing Page Image -->
+        <div >
+            <img src="/img/landing.png" alt="Welcome" class="img-fluid" style="width: 300px;">
+        </div>
+        
+        <!-- Welcome Title -->
+        <h1 class="display-4">Welcome to My App</h1>
+        
+        <!-- Login/Logout Button -->
+        <div class="mt">
+            <a *ngIf="!isLoggedIn" routerLink="/login" mat-raised-button class="btn-primary">Login Here</a>
+            <a *ngIf="isLoggedIn" (click)="logoutUser()" mat-raised-button class="btn-danger">Logout</a>
+        </div>
+
+        <!-- Optional Subheading -->
+        <p class="display-4">Your journey starts here. Connect, engage, and enjoy!</p>
+    </div>
+</div>

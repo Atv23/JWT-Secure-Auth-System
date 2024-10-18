@@ -1,0 +1,91 @@
+<div class="container mt">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+                <img class="signup-img"  src="/img/signup-page.png" alt="sign up image" />
+            </div>
+            <h2 class="text-center">Sign Up</h2>
+
+            <!-- FORM -->
+            <form (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <!-- First Column -->
+                    <div class="col-md-6">
+                        <mat-form-field class="full-width">
+                            <mat-label>Name</mat-label>
+                            <input name="name" [(ngModel)]="user.name" type="text" matInput required />
+                            <mat-error *ngIf="!user.name">Name is required.</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Age</mat-label>
+                            <input [(ngModel)]="user.age" name="age" type="number" matInput required />
+                            <mat-error *ngIf="!user.age">Age is required.</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Gender</mat-label>
+                            <mat-select [(ngModel)]="user.gender" name="gender" required>
+                                <mat-option value="male">Male</mat-option>
+                                <mat-option value="female">Female</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="!user.gender">Gender is required.</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Second Column -->
+                    <div class="col-md-6">
+                        <mat-form-field class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="user.email" name="email" type="email" matInput required
+                                [formControl]="email" />
+                            @if (email.invalid) {
+                            <mat-error>{{errorMessage()}}</mat-error>
+                            }
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="user.password" name="password" type="password" matInput required />
+                            <mat-error *ngIf="!user.password">Password is required.</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Full-width Textarea -->
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <mat-form-field class="full-width">
+                            <mat-label>Description</mat-label>
+                            <textarea [(ngModel)]="user.description" name="description" matInput required></textarea>
+                            <mat-error *ngIf="!user.description">Description is required.</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <!-- Styled Image Upload Section -->
+                <div class="upload-section">
+                    <label for="file-upload" class="custom-file-upload">
+                        <mat-icon>perm_media</mat-icon><span style="margin-left:5px;">Upload Image</span>
+                    </label>
+                    <input id="file-upload" type="file" (change)="onFileSelected($event)" accept="image/*" />
+                    <!-- Display the selected file name -->
+                    <!-- <span *ngIf="fileName" class="file-name" style="margin-left: 10px;">
+                        Selected file: {{ fileName }}
+                    </span> -->
+                    <!-- Image Preview -->
+                    <div *ngIf="imagePreview" class="image-preview">
+                        <img [src]="imagePreview" alt="Image preview"
+                            style="max-width: 200px; max-height: 200px; border-radius: 5px;" />
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="row mt-4 text-center">
+                    <div class="col-12">
+                        <button type="submit" mat-flat-button color="primary">Submit</button>
+                        <button type="reset" style="margin-left: 10px;" mat-raised-button>Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

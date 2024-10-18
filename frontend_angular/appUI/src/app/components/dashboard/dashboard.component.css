@@ -1,0 +1,113 @@
+.bootstrap-wrapper {
+    padding: 60px;
+}
+.container{
+    background: linear-gradient(135deg, magenta 30%, pink 100%)
+}
+.btn-custom {
+    background-color: rgb(97, 29, 97);
+    color: white;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.btn-custom:hover {
+    background-color: pink;
+    color: magenta;
+}
+
+.bootstrap-wrapper {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgb(92, 14, 103);
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: row; /* Row direction for larger screens */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.profile-image {
+    width: 250px; /* Responsive width */
+    height: 250px; /* Maintain aspect ratio */
+    border-radius: 50%;
+    object-fit: cover; 
+    margin-right: 20px; /* Space between image and details */
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.7), /* First inner glow */
+                0 0 40px rgba(0, 183, 255, 0.5), /* Middle glow */
+                0 0 60px rgba(0, 183, 255, 0.3) !important; /* Outer glow for softer effect */
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: rgb(97, 29, 97);
+    font-size: 1.25rem; /* Larger for main view */
+    flex-grow: 1; /* Allow to grow and fill available space */
+    max-width: 70%; /* Responsive maximum width */
+    margin: 10px; /* Add margin for spacing */
+}
+.details p {
+    margin: 5px 0; /* Space between paragraphs */
+    padding: 10px;
+    background: transparent;
+    background-color: rgba(215, 212, 212, 0.6);
+    border-radius: 10px;
+    border-left: 5px solid darkmagenta;
+    font-size: 1rem; /* Responsive font size */
+    max-width: 100%; /* Allow paragraphs to be smaller */
+    word-wrap: break-word; /* Ensure long words are wrapped */
+    display: flex;
+    align-items: center;
+}
+.user-icons{
+    color: darkmagenta;
+    display: flex;
+    align-items: center;
+}
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center everything */
+    }
+
+    .profile-image {
+        width: 80%; /* Make image larger on small screens */
+        margin: 0 0 20px 0; /* Adjust margins */
+    }
+
+    .details {
+        max-width: 90%; /* Wider for small screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .btn-custom {
+        font-size: 1rem; /* Adjust button font size for smaller screens */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-custom {
+        font-size: 0.9rem; /* Smaller button on very small screens */
+        padding: 8px 16px; /* Adjust padding for very small screens */
+    }
+
+    .details p {
+        font-size: 0.9rem; /* Smaller font for details */
+    }
+}

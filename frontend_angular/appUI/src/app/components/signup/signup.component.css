@@ -1,0 +1,67 @@
+.container {
+  margin-top: 10px; 
+  display: flex;
+  justify-content: center;
+}
+
+.full-width {
+  width: 100%; /* Make form fields full width */
+}
+
+h2 {
+  margin-bottom: 1rem; /* Space below the header */
+}
+
+.mat-form-field {
+  margin-bottom: 1rem; /* Space between form fields */
+}
+
+/* Centering the buttons */
+/* Custom styling for the image upload section */
+.upload-section {
+  margin: 10px 0;
+  display: flex;
+}
+
+.custom-file-upload {
+  max-height: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: pink;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.custom-file-upload:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+#file-upload {
+  display: none;
+}
+
+.upload-section label i {
+  margin-right: 5px;
+}
+.signup-img{
+  width: 200px;
+}
+.file-name {
+  display: flex;
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  color: #555;
+}
+.image-preview img {
+  border: 2px solid #ddd;
+  padding: 5px;
+  margin-left: 50px;
+  background-color: #f9f9f9;
+}

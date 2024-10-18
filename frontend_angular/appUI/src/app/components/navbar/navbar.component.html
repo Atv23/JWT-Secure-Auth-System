@@ -1,0 +1,24 @@
+<mat-toolbar class="example-nav">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span><a routerLink="/" class="app-name">My App</a></span>
+    <span class="example-spacer"></span>
+    
+    <a routerLink="/dashboard" mat-icon-button class="example-icon " aria-label="Example icon-button with share icon" matTooltip="Dashboard">
+        <mat-icon>dashboard</mat-icon>
+    </a>
+    <a routerLink="/login" *ngIf="!isLoggedIn" mat-icon-button class="example-icon" aria-label="Login button" matTooltip="Login">
+        <mat-icon>exit_to_app</mat-icon>
+    </a>
+    <a routerLink="/signup" *ngIf="!isLoggedIn" mat-icon-button class="example-icon" aria-label="Signup button" matTooltip="Signup">
+      <mat-icon>fingerprint</mat-icon>
+  </a>
+    <a *ngIf="isLoggedIn" mat-icon-button class="example-icon" matTooltip="{{ userName }}" style="display: flex; align-items: center;">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+    <a (click)="logoutUser()" *ngIf="isLoggedIn" mat-icon-button class="example-icon" aria-label="Logout button" matTooltip="Logout">
+      <mat-icon>power_settings_new</mat-icon>
+  </a>
+  </mat-toolbar>
+  
